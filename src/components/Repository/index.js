@@ -43,7 +43,6 @@ class Repository extends React.Component {
 Repository.propTypes = {
   name: PropTypes.string.isRequired,
   fullName: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   stars: PropTypes.number.isRequired
 }

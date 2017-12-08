@@ -7,15 +7,10 @@ import { linkTo } from '@storybook/addon-links';
 import repo from './repo.json'
 import repos from './repos.json'
 
+import Ecosystem from './../components/Ecosystem'
 import Repository from './../components/Repository'
-
-// import { Button, Welcome } from '@storybook/react/demo';
-
-// storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
-
-// storiesOf('Button', module)
-  // .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  // .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>);
+import RepositoryList from './../components/RepositoryList'
+import Title from './../components/Ecosystem/Title'
 
 
 storiesOf('Ecosystem', module)
@@ -31,3 +26,6 @@ storiesOf('Ecosystem', module)
     )
     }
   )
+  .add('Repository List', () => <RepositoryList repositories={repos.items} />)
+  .add('Title', () => <Title topic="react" reposCount={25000} />)
+  .add('Ecosystem', () => <Ecosystem topic="react" data={repos} />)
