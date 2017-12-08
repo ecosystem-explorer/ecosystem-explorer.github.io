@@ -20,6 +20,7 @@ const Input = styled.input`
   color: grey;
   font-size: 1rem;
   padding-left: 5px;
+  outline: none;
 `
 
 const Button = styled.button`
@@ -27,12 +28,14 @@ const Button = styled.button`
   height: ${buttonDimensions}px;
   background: ${brightGreen};
   border: 0;
+  border-radius: 0px;
   cursor: pointer;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
+  outline: none;
   &:hover {background: ${green};};
   &:active {background: green;}
 `
@@ -47,20 +50,24 @@ class Search extends React.Component {
     this.setState({topic: event.target.value})
   }
 
-  search = () => {
-    this.props.onSearch(this.state.topic)
+  addTopic = () => {
+    this.props.onAdd(this.state.topic)
   }
 
   render() {
     return (
       <SearchWrapper>
         <Input value={this.state.topic} onChange={this.setTopic} />
-        <Button onClick={this.search}>
+        <Button onClick={this.addTopic}>
           <span> + </span>
         </Button>
       </SearchWrapper>
     )
   }
+}
+
+Search.propTypes = {
+  onAdd: PropTypes.func.isRequired
 }
 
 export default Search

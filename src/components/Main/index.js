@@ -38,7 +38,7 @@ class Main extends React.Component {
 }
 
 Main.propTypes = {
-  ecostystems: PropTypes.array.isRequired
+  ecosystems: PropTypes.array.isRequired
 }
 
 export default Main

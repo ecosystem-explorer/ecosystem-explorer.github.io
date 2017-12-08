@@ -2,6 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import { connect } from 'react-redux'
+
+import { removeTopic } from './../../../ducks/ecosystems'
+
 import { green, brightGreen } from './../../../utils/colors'
 
 
@@ -12,14 +16,26 @@ const TitleWrapper = styled.div`
   background-color: grey;
   padding: 15px;
   font-weight: bold;
-  flex: 0;
   align-items: center;
-  height: 40px;
+  height: 25px;
   max-width: 100%;
+`
+
+const Counter = styled.div`
+  display: flex;
+`
+
+const Remove = styled.div`
+  margin-left: 15px;
+  cursor: pointer;
 `
 
 
 class Title extends React.Component {
+
+  removeTopic = () => {
+    this.props.removeTopic(this.props.topic)
+  }
 
   renderLoader = () => {
     if (this.props.isLoading) {
@@ -30,7 +46,12 @@ class Title extends React.Component {
 
   renderRepoCount = () => {
     if (!this.props.isLoading && this.props.reposCount >= 0) {
-      return <div>{this.props.reposCount} repos</div>
+      return (
+        <Counter>
+          <div>{this.props.reposCount} repos</div>
+          <Remove onClick={this.removeTopic}>X</Remove>
+        </Counter>
+      )
     } 
     return null
   }
@@ -52,4 +73,10 @@ Title.propTypes = {
   isLoading: PropTypes.bool.isRequired
 }
 
-export default Title
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeTopic: (topic) => dispatch(removeTopic(topic))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Title)
