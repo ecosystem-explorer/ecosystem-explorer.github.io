@@ -8,6 +8,10 @@ const StarsWrapper = styled.div`
   color: white;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  min-width: 100px;
+  flex-shrink: 0;
+  flex: 1;
 `
 
 const StarWrapper = styled.div`

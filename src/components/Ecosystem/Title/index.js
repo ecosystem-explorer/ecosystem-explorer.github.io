@@ -15,6 +15,7 @@ const TitleWrapper = styled.div`
   flex: 0;
   align-items: center;
   height: 40px;
+  max-width: 100%;
 `
 
 

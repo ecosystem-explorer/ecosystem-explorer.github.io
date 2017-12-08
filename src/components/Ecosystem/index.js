@@ -10,6 +10,10 @@ const EcosystemWrapper = styled.div`
   max-height: 100%;
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  min-width: 300px;
+  max-width: 500px;
 `
 
 
