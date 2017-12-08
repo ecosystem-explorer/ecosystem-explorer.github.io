@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import Header from './components/Header'
 import Main from './containers/Main'
+import Footer from './components/Footer'
 
 import './App.css';
 
@@ -21,6 +22,7 @@ class App extends Component {
       <AppWrapper>
         <Header />
         <Main />
+        <Footer />
       </AppWrapper>
     )
   }
