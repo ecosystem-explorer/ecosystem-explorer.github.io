@@ -6,6 +6,7 @@ import {minWidth, maxWidth} from './../../utils/constants'
 import { brightGreen } from './../../utils/colors'
 
 import SearchContainer from './../../containers/Search'
+import ExamplesContainer from './../../containers/Examples'
 
 const HeaderOuter = styled.div`
   display: flex;
@@ -34,6 +35,7 @@ class Header extends React.Component {
         <HeaderInner>
           <Title><span>ecosystem</span> <span>explorer</span></Title>
           <SearchContainer />
+          <ExamplesContainer />
         </HeaderInner>
       </HeaderOuter>
     )

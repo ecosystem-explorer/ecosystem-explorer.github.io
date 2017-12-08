@@ -83,7 +83,6 @@ const ecosystemReducer = (state=defaultState, action) => {
         ecosystems: [...state.ecosystems.slice(0, removeTopicIndex), ...state.ecosystems.slice(removeTopicIndex + 1)]
       }
       
-
     default:
       return state;
   }

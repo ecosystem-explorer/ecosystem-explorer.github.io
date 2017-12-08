@@ -3,15 +3,14 @@ import { connect } from 'react-redux'
 
 import { addTopic } from './../ducks/ecosystems'
 
-import Search from './../components/Header/Search'
+import Examples from './../components/Header/Examples'
 
 
-class SearchContainer extends React.Component {
+class ExampleContainer extends React.Component {
   render() {
     return (
-      <Search
+      <Examples
         onAdd={this.props.addTopic}
-        topic={this.props.topic}
       />
     )
   }
@@ -23,4 +22,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(SearchContainer)
+export default connect(null, mapDispatchToProps)(ExampleContainer)

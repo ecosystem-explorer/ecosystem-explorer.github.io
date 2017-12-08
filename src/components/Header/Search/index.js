@@ -7,6 +7,7 @@ import { green, brightGreen, lightGrey } from './../../../utils/colors'
 const SearchWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 `
 
 const buttonDimensions = 50
@@ -51,7 +52,10 @@ class Search extends React.Component {
   }
 
   addTopic = () => {
-    this.props.onAdd(this.state.topic)
+    if (this.state.topic.length) {
+      this.props.onAdd(this.state.topic)
+      this.setState({topic: ''})
+    }
   }
 
   render() {
