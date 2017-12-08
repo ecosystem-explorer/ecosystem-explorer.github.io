@@ -6,6 +6,7 @@ import {minWidth, maxWidth} from './../../utils/constants'
 
 import RepositoryList from './../RepositoryList'
 import Title from './Title'
+import LoadMoreButton from '../../components/LoadMoreButton'
 
 const EcosystemWrapper = styled.div`
   flex: 1; 
@@ -37,6 +38,7 @@ class Ecosystem extends React.Component {
           isLoading={this.props.isLoading || false}
         />
         {this.renderRepoList()}
+        <LoadMoreButton isLoadingMore={this.props.isLoadingMore} topic={this.props.topic}/>
       </EcosystemWrapper>
     )
   }
@@ -45,7 +47,8 @@ class Ecosystem extends React.Component {
 Ecosystem.propTypes = {
   topic: PropTypes.string.isRequired,
   data: PropTypes.object.isRequired,
-  isLoading: PropTypes.bool.isRequired
+  isLoading: PropTypes.bool.isRequired,
+  isLoadingMore: PropTypes.bool.isRequired
 }
 
 export default Ecosystem

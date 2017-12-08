@@ -24,6 +24,7 @@ class Main extends React.Component {
           topic={ecosystem.topic}
           data={ecosystem.data}
           isLoading={ecosystem.isLoading}
+          isLoadingMore={ecosystem.isLoadingMore}
         />
       )
     })
