@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 
 import Ecosystem from './../Ecosystem'
+import Intro from './../Intro'
 
 
 const MainWrapper = styled.div`
@@ -27,9 +28,17 @@ class Main extends React.Component {
       )
     })
   }
+
+  renderIntro = () => {
+    if (this.props.ecosystems.length === 0) {
+      return <Intro />
+    }
+    return null
+  }
   render() {
     return (
       <MainWrapper>
+        {this.renderIntro()}
         {this.renderEcosystems()}
       </MainWrapper>
     )
