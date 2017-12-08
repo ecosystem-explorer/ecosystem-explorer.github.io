@@ -9,13 +9,13 @@ import Title from './Title'
 
 const EcosystemWrapper = styled.div`
   flex: 1; 
-  max-height: 100%;
   display: flex;
   flex-direction: column;
-  margin-left: 15px;
-  margin-right: 15px;
   min-width: ${minWidth}px;
   max-width: ${maxWidth}px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 5px;
 `
 
 
