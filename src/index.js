@@ -5,14 +5,21 @@ import App from './App';
 // import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux'
 import { applyMiddleware, createStore } from 'redux'
-import logger from 'redux-logger'
 import thunk from 'redux-thunk';
 
 import rootReducer from './ducks'
 
+const middlewares = [thunk];
+
+if (process.env.NODE_ENV === `development`) {
+  const { logger } = require(`redux-logger`);
+
+  middlewares.push(logger);
+}
+
 let store = createStore(
   rootReducer,
-  applyMiddleware(logger, thunk)
+  applyMiddleware(...middlewares)
 );
 
 const Root = () => (
