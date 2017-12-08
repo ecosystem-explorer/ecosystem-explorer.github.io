@@ -5,6 +5,7 @@ import styled from 'styled-components'
 const TheName = styled.h3`
   margin-top: 0px;
   color: white;
+  margin-bottom: 0.5rem;
 `
 
 const TheFullName = styled.div`

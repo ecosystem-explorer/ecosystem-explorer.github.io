@@ -9,19 +9,37 @@ const TitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   color: ${brightGreen};
-  background-color: ${green};
+  background-color: grey;
   padding: 15px;
   font-weight: bold;
   flex: 0;
+  align-items: center;
+  height: 40px;
 `
 
 
 class Title extends React.Component {
+
+  renderLoader = () => {
+    if (this.props.isLoading) {
+      return <div>loading...</div>
+    }
+    return null
+  }
+
+  renderRepoCount = () => {
+    if (!this.props.isLoading && this.props.reposCount >= 0) {
+      return <div>{this.props.reposCount} repos</div>
+    } 
+    return null
+  }
+
   render() {
     return (
       <TitleWrapper>
         <div>{this.props.topic}</div>
-        <div>{this.props.reposCount} repos</div>
+        {this.renderRepoCount()}
+        {this.renderLoader()}
       </TitleWrapper>
     )
   }
@@ -29,7 +47,8 @@ class Title extends React.Component {
 
 Title.propTypes = {
   topic: PropTypes.string.isRequired,
-  reposCount: PropTypes.number.isRequired
+  reposCount: PropTypes.number,
+  isLoading: PropTypes.bool.isRequired
 }
 
 export default Title
