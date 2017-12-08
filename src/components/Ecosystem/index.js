@@ -15,7 +15,7 @@ const EcosystemWrapper = styled.div`
   max-width: ${maxWidth}px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 5px;
+  padding: 0 15px;
 `
 
 

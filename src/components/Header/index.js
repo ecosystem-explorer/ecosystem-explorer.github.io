@@ -11,7 +11,8 @@ import ExamplesContainer from './../../containers/Examples'
 const HeaderOuter = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
 `
 
 const HeaderInner = styled.div`
@@ -24,8 +25,8 @@ const HeaderInner = styled.div`
 
 const Title = styled.h1`
   color: ${brightGreen};
-  display: flex;
-  justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 `
 
 class Header extends React.Component {
@@ -33,7 +34,7 @@ class Header extends React.Component {
     return (
       <HeaderOuter>
         <HeaderInner>
-          <Title><span>ecosystem</span> <span>explorer</span></Title>
+          <Title>ecosystem-explorer</Title>
           <SearchContainer />
           <ExamplesContainer />
         </HeaderInner>

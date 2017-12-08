@@ -17,7 +17,7 @@ const Input = styled.input`
   background: ${lightGrey};
   height: ${buttonDimensions}px;
   flex: 1;
-  margin-right: 25px;
+  margin-right: 15px;
   color: grey;
   font-size: 1rem;
   padding-left: 5px;

@@ -11,7 +11,8 @@ const FooterWrapper = styled.div`
   color: ${lightGrey};
   display: flex;
   justify-content: flex-end;
-  padding: 1em;
+  padding: .5rem 1rem;
+  font-size: 0.6rem;
 `
 
 
@@ -19,7 +20,7 @@ class Footer extends React.Component {
   render() {
     return (
       <FooterWrapper>
-        ecosystem explorer is brought to you by&nbsp;
+        brought to you by&nbsp;
         <Anchor href="https://www.superservice-international.com" target="_blank">superservice-international</Anchor>
         &nbsp;|&nbsp;
         <Anchor href="https://github.com/ecosystem-explorer/ecosystem-explorer.github.io" target="_blank">github</Anchor>
