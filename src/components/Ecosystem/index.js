@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import {minWidth, maxWidth} from './../../utils/constants'
+
 import RepositoryList from './../RepositoryList'
 import Title from './Title'
 
@@ -12,8 +14,8 @@ const EcosystemWrapper = styled.div`
   flex-direction: column;
   margin-left: 10px;
   margin-right: 10px;
-  min-width: 300px;
-  max-width: 500px;
+  min-width: ${minWidth}px;
+  max-width: ${maxWidth}px;
 `
 
 

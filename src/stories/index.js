@@ -9,13 +9,14 @@ import repos from './repos.json'
 import angularRepos from './angular-repos.json'
 
 import Ecosystem from './../components/Ecosystem'
+import Header from './../components/Header'
 import Main from './../components/Main'
 import Repository from './../components/Repository'
 import RepositoryList from './../components/RepositoryList'
 import Title from './../components/Ecosystem/Title'
 
 
-const ecosystems = [
+const three_ecosystems = [
   {
     topic: 'react',
     isLoading: false,
@@ -30,6 +31,19 @@ const ecosystems = [
     topic: 'vuejs',
     isLoading: true,
     data: repos
+  }
+]
+
+const two_ecosystems = [
+  {
+    topic: 'react',
+    isLoading: false,
+    data: repos
+  },
+  {
+    topic: 'angularjs',
+    isLoading: false,
+    data: angularRepos
   }
 ]
 
@@ -55,5 +69,10 @@ storiesOf('Ecosystem', module)
   .add('Ecosystem loaded', () => <Ecosystem topic="react" data={repos} isLoading={false} />)
   .add('Ecosystem no repos', () => <Ecosystem topic="react" data={{total_count: 0, items: []}} isLoading={false} />)
 
+storiesOf('Header', module)
+  .add('Header', () => <Header />)
+
 storiesOf('Main', module)
-  .add('Main', () => <Main ecosystems={ecosystems} />) 
+  .add('Main two', () => <Main ecosystems={two_ecosystems} />) 
+  .add('Main three', () => <Main ecosystems={three_ecosystems} />) 
+  .add('Main five', () => <Main ecosystems={two_ecosystems.concat(three_ecosystems)} />) 
