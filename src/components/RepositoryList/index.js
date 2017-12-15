@@ -7,7 +7,6 @@ import Repository from './../Repository'
 
 const ListWrapper = styled.div`
   flex: 1;
-  overflow-y: scroll;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
 `

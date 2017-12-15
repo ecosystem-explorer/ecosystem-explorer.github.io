@@ -29,11 +29,24 @@ const EcosystemInner = ShadowWrapper.extend`
   width: 100%;
 `
 
+const ListWrapper = styled.div`
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: scroll;
+`
+
 
 class Ecosystem extends React.Component {
   renderRepoList = () => {
     if (!this.props.isLoading && this.props.data.items.length) {
-      return <RepositoryList repositories={this.props.data.items} />
+      return (
+      <ListWrapper>
+        <RepositoryList repositories={this.props.data.items} />
+        <LoadMoreButton isLoadingMore={this.props.isLoadingMore} topic={this.props.topic}/>
+      </ListWrapper>
+      )
     } else if (!this.props.isLoading && !this.props.data.items.length) {
       return <p>No repos for this topic!</p>
     }
