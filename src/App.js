@@ -7,7 +7,7 @@ import Footer from './components/Footer'
 
 import './App.css';
 
-import backgroundImage from './eco-bg.jpg'
+import backgroundImageUrl from './eco-bg.jpg'
 
 const AppWrapper = styled.div`
   width: 100vw;
@@ -19,23 +19,40 @@ const AppWrapper = styled.div`
 
   &:after {
     content: "";
-    background: url(${backgroundImage});
+    background: url(${backgroundImageUrl});
     background-size: cover;
-    opacity: 0.4;
+    opacity: ${props => props.bgImgSrc !== '' ? .7 : 0};
     position: absolute;
     z-index: -1;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
+    transition: all 1s ease;
   }
 `
 
 
 class App extends Component {
+
+  state = {
+    bgImgSrc: ''
+  }
+
+  componentDidMount() {
+    const backgroundImage = new Image()
+    backgroundImage.onload = () => {
+      this.setState({
+        bgImgSrc: backgroundImage.src
+      })
+    }
+    backgroundImage.src = backgroundImageUrl
+  }
+
   render() {
+
     return (
-      <AppWrapper>
+      <AppWrapper bgImgSrc={this.state.bgImgSrc}>
         <Header />
         <Main />
         <Footer />
