@@ -66,10 +66,20 @@ class Search extends React.Component {
     }
   }
 
+  handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      this.addTopic()
+    }
+  }
+
   render() {
     return (
       <SearchWrapper>
-        <Input value={this.state.topic} onChange={this.setTopic} />
+        <Input
+          value={this.state.topic}
+          onChange={this.setTopic}
+          onKeyPress={this.handleKeyPress}
+        />
         <Button onClick={this.addTopic}>
           <span> + </span>
         </Button>
