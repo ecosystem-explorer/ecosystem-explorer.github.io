@@ -2,23 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { brightGreen, lightGrey } from './../../../utils/colors'
+import { green, darkGreen } from './../../../utils/colors'
 
 const ExamplesWrapper = styled.div`
   display: flex;
 `
 
 const Example = styled.div`
-  color: ${brightGreen};
+  color: ${green};
   cursor: pointer;
   margin-right: 3px;
 `
 
 const Prefix = styled.div`
-  color: ${lightGrey};
+  color: ${darkGreen};
 `
 
-const examples = ['react', 'angular', 'vuejs']
+const examples = ['react', 'angular', 'vue']
 
 
 class Examples extends React.Component {
