@@ -79,6 +79,7 @@ class Search extends React.Component {
           value={this.state.topic}
           onChange={this.setTopic}
           onKeyPress={this.handleKeyPress}
+          placeholder="ecosystem to add..."
         />
         <Button onClick={this.addTopic}>
           <span> + </span>
