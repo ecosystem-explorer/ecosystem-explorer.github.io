@@ -15,7 +15,7 @@ const RepositoryWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid ${darkGreen};
+  border-bottom: 1px solid ${darkGreen};
   color: ${darkGreen};
   padding: 15px;
   background-color: white;
