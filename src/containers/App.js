@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
 import { addTopic } from './../ducks/ecosystems'
+import { getTopicsFromSearch } from './../utils/helpers'
 
 import App from './../components/App'
 
@@ -14,18 +15,26 @@ class AppContainer extends React.Component {
     this.setEcosystems(location.search)
   }
 
-  setEcosystems = (searchString) => {
-    const split = searchString.split('=')
-    if (split.length === 2) {
-      const topics = split[1].split(',')
-      topics.forEach((topic) => this.props.addTopic(topic))
+  componentWillReceiveProps(newProps) {
+    const { location, history } = this.props
+    if (newProps.ecosystems.length !== this.props.ecosystems.length) {
+      const newTopics = newProps.ecosystems.map((e) => e.topic)
+      if (newTopics.length) {
+        const newLocation = `/?topics=${newTopics.join(',')}`
+        history.push(newLocation)
+      } else {
+        history.push('/')
+      }
+
     }
   }
 
+  setEcosystems = (searchString) => {
+    const topics = getTopicsFromSearch(searchString)
+    topics.forEach((topic) => this.props.addTopic(topic))
+  }
+
   render() {
-    // const { match, location, history } = this.props
-    // console.log(location)
-    // console.log(this.props.ecosystems)
     return (
       <App />
     )
