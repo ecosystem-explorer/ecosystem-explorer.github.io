@@ -6,19 +6,21 @@ import { connect } from 'react-redux'
 
 import { removeTopic } from './../../../ducks/ecosystems'
 
-import { green, brightGreen } from './../../../utils/colors'
+import { green, darkGreen } from './../../../utils/colors'
 
 
 const TitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  color: ${brightGreen};
-  background-color: grey;
+  color: ${darkGreen};
+  background-color: ${green};
   padding: 15px;
   font-weight: bold;
   align-items: center;
   height: 25px;
   max-width: 100%;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
 `
 
 const Counter = styled.div`
@@ -34,7 +36,7 @@ const Remove = styled.div`
 class Title extends React.Component {
 
   removeTopic = () => {
-    this.props.removeTopic(this.props.topic)
+    this.props.onRemoveTopic(this.props.topic)
   }
 
   renderLoader = () => {
@@ -73,10 +75,4 @@ Title.propTypes = {
   isLoading: PropTypes.bool.isRequired
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    removeTopic: (topic) => dispatch(removeTopic(topic))
-  }
-}
-
-export default connect(null, mapDispatchToProps)(Title)
+export default Title

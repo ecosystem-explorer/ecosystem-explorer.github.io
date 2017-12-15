@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import Star from './Star'
 
 const StarsWrapper = styled.div`
-  color: white;
   display: flex;
   align-items: center;
   justify-content: flex-end;

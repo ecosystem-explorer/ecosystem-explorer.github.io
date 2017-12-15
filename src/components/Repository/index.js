@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { green } from './../../utils/colors'
+import { darkGreen } from './../../utils/colors'
 
 import Name from './Name'
 import Stars from './Stars'
@@ -15,9 +15,10 @@ const RepositoryWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid white;
-  background: ${green};
+  border-top: 1px solid ${darkGreen};
+  color: ${darkGreen};
   padding: 15px;
+  background-color: white;
 `
 
 

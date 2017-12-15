@@ -62,6 +62,7 @@ storiesOf('Repo', module)
     }
   )
   .add('Repository List', () => <RepositoryList repositories={repos.items} />)
+
 storiesOf('Ecosystem', module)
   .add('Title loading', () => <Title topic="react" isLoading={true} />)
   .add('Title loaded', () => <Title topic="react" reposCount={25000} isLoading={false} />)

@@ -6,12 +6,12 @@ import {minWidth, maxWidth} from './../../utils/constants'
 import { brightGreen } from './../../utils/colors'
 
 import SearchContainer from './../../containers/Search'
-import ExamplesContainer from './../../containers/Examples'
 
 const HeaderOuter = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
   font-size: 0.9rem;
 `
 
@@ -23,20 +23,12 @@ const HeaderInner = styled.div`
   margin-right: 15px;
 `
 
-const Title = styled.h1`
-  color: ${brightGreen};
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-`
-
 class Header extends React.Component {
   render() {
     return (
       <HeaderOuter>
         <HeaderInner>
-          <Title>ecosystem-explorer</Title>
           <SearchContainer />
-          <ExamplesContainer />
         </HeaderInner>
       </HeaderOuter>
     )

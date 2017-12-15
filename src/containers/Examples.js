@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { addTopic } from './../ducks/ecosystems'
 
-import Examples from './../components/Header/Examples'
+import Examples from './../components/Intro/Examples'
 
 
 class ExampleContainer extends React.Component {

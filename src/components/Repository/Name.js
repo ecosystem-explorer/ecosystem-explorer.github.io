@@ -9,7 +9,6 @@ const NameWrapper = styled.div`
 
 const TheName = styled.h3`
   margin-top: 0px;
-  color: white;
   margin-bottom: 0.5rem;
   max-width: 100%;
   overflow: hidden;
@@ -19,7 +18,6 @@ const TheName = styled.h3`
 
 const TheFullName = styled.div`
   font-size: 0.8rem;
-  color: white;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;

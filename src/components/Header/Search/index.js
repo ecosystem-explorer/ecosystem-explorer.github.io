@@ -2,32 +2,38 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { green, brightGreen, lightGrey } from './../../../utils/colors'
+import ShadowWrapper from './../../../components/ShadowWrapper'
+import { green, brightGreen, darkGreen } from './../../../utils/colors'
 
-const SearchWrapper = styled.div`
+const SearchWrapper = ShadowWrapper.extend`
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  background: white;
 `
 
 const buttonDimensions = 50
 
 const Input = styled.input`
   border: 0;
-  background: ${lightGrey};
+  background: white;
   height: ${buttonDimensions}px;
   flex: 1;
   margin-right: 15px;
-  color: grey;
+  color: ${darkGreen};
   font-size: 1rem;
-  padding-left: 5px;
+  padding-left: 10px;
   outline: none;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 `
 
 const Button = styled.button`
   width: ${buttonDimensions}px;
   height: ${buttonDimensions}px;
-  background: ${brightGreen};
+  background: ${green};
   border: 0;
   border-radius: 0px;
   cursor: pointer;
@@ -37,8 +43,10 @@ const Button = styled.button`
   justify-content: center;
   font-size: 2rem;
   outline: none;
-  &:hover {background: ${green};};
-  &:active {background: green;}
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  &:hover {background: ${brightGreen};};
+  &:active {background: ${darkGreen};}
 `
 
 class Search extends React.Component {
