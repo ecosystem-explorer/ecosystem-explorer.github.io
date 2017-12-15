@@ -1,9 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import {minWidth, maxWidth} from './../../utils/constants'
-import { brightGreen } from './../../utils/colors'
 
 import SearchContainer from './../../containers/Search'
 

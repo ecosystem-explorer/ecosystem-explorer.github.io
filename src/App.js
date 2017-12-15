@@ -61,11 +61,9 @@ class App extends Component {
   componentDidMount() {
     const backgroundImage = new Image()
     backgroundImage.onload = () => {
-      setTimeout(() => {
-        this.setState({
-          showBg: true
-        })
-      }, 2000)
+      this.setState({
+        showBg: true
+      })
     }
     backgroundImage.src = backgroundImageUrl
   }

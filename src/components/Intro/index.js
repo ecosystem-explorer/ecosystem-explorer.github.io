@@ -33,8 +33,7 @@ class Intro extends React.Component {
       <IntroWrapper>
         <IntroInner>
           <h1>ecosystem explorer</h1>
-          <p>Explore the ecosystems of open-source software hosted on github by topics.</p>
-          <p>Compare popular projects accross technologies.</p>
+          <p>explore the ecosystems of open-source software hosted on github across frameworks and technologies.</p>
           <ExamplesContainer />
         </IntroInner>
       </IntroWrapper>
