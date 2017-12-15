@@ -29,7 +29,9 @@ let store = createStore(
 
 const Root = () => (
   <Provider store={store}>
-    <App />
+    <Router>
+      <Route path="/" component={App} />
+    </Router>
   </Provider>
 )
 
