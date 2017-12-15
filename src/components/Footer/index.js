@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { brightGreen, lightGrey } from './../../utils/colors'
+import { darkGreen } from './../../utils/colors'
 
 const Anchor = styled.a`
-  color: ${brightGreen};
+  color: ${darkGreen};
 `
 
 const FooterWrapper = styled.div`
-  color: ${lightGrey};
+  color: ${darkGreen};
   display: flex;
   justify-content: flex-end;
   padding: .5rem 1rem;

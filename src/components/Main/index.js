@@ -11,6 +11,7 @@ const MainWrapper = styled.div`
   flex: 1;
   overflow-x: scroll;
   display: flex;
+  padding-bottom: 10px;
 `
 
 
